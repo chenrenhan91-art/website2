@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xinjun Market Limited - 专业Facebook广告投放解决方案</title>
+    <meta name="description" content="Xinjun Market Limited 专注于Facebook全球精准营销，提供从广告开户、策略制定到数据优化的全链路解决方案，助您拓展海外市场。">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Facebook/Tech Blue style
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0c4a6e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #075985;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(to right bottom, rgba(15, 23, 42, 0.9), rgba(12, 74, 110, 0.8)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-brand-800 rounded-lg flex items-center justify-center text-white text-xl font-bold">
+                        X
+                    </div>
+                    <span class="font-bold text-2xl text-slate-900 tracking-tight">Xinjun Market</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-slate-600 hover:text-brand-600 font-medium transition">首页</a>
+                    <a href="#services" class="text-slate-600 hover:text-brand-600 font-medium transition">核心服务</a>
+                    <a href="#advantage" class="text-slate-600 hover:text-brand-600 font-medium transition">优势</a>
+                    <a href="#data" class="text-slate-600 hover:text-brand-600 font-medium transition">数据案例</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-brand-800 text-white rounded-full hover:bg-brand-900 transition shadow-lg hover:shadow-brand-500/30 font-medium">
+                        立即咨询
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600 rounded-md">首页</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600 rounded-md">核心服务</a>
+                <a href="#advantage" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600 rounded-md">优势</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-white bg-brand-800 rounded-md text-center mt-4">立即咨询</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center hero-bg text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="md:w-2/3 lg:w-1/2 space-y-8 fade-in-up" style="animation-delay: 0.2s;">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-sm font-medium tracking-wide">Facebook 官方顶级代理合作伙伴</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    数据驱动增长<br>
+                    <span class="text-sky-400">精准触达</span> 全球用户
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed font-light">
+                    Xinjun Market Limited 致力于为出海企业提供一站式 Facebook 广告投放解决方案。我们用数据说话，以 ROI 为导向，助您在激烈的全球市场中脱颖而出。
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#contact" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-semibold text-lg transition shadow-lg hover:shadow-brand-500/50 text-center flex items-center justify-center gap-2">
+                        开始投放 <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#services" class="px-8 py-4 bg-transparent border border-white/30 hover:bg-white/10 text-white rounded-lg font-semibold text-lg transition text-center backdrop-blur-sm">
+                        了解服务
+                    </a>
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="pt-8 flex gap-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="flex items-center gap-2">
+                        <i class="fab fa-facebook text-3xl"></i>
+                        <span class="font-semibold">Marketing Partner</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fab fa-instagram text-3xl"></i>
+                        <span class="font-semibold">Ads Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated Background Element -->
+        <div class="absolute right-0 bottom-0 w-1/3 h-full hidden lg:block overflow-hidden pointer-events-none opacity-40">
+             <img src="https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?q=80&w=2080&auto=format&fit=crop" alt="Data Chart" class="object-cover w-full h-full mix-blend-overlay">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+             <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-50"></div>
+             <div class="absolute top-1/2 -left-24 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-800 font-bold tracking-wide uppercase text-sm mb-3">我们的专业服务</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">全链路广告投放解决方案</h3>
+                <p class="text-slate-600 text-lg">从账户搭建到创意优化，我们提供端到端的精细化运营，确保每一分预算都花在刀刃上。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-id-card text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">企业户开户</h4>
+                    <p class="text-slate-500 leading-relaxed">提供Facebook企业广告账户极速开户服务，账户稳定，权重高，抗封能力强。</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-bullseye text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">精准策略制定</h4>
+                    <p class="text-slate-500 leading-relaxed">基于产品特性与目标市场，定制受众画像与投放策略，精准锁定潜在客户。</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-palette text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">高转化素材</h4>
+                    <p class="text-slate-500 leading-relaxed">本土化创意团队，制作高点击率（CTR）的图片与视频素材，持续AB测试迭代。</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group p-8 bg-white rounded-2xl shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">数据分析与优化</h4>
+                    <p class="text-slate-500 leading-relaxed">实时监控广告数据，动态调整出价与版位，持续降低转化成本，提升ROAS。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Advantage Section -->
+    <section id="advantage" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Data Analytics Dashboard" class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition duration-500 hover:scale-105">
+                        
+                        <!-- Floating Card -->
+                        <div class="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20 max-w-xs">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span class="text-sm font-semibold text-white">ROI 持续增长中</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 space-y-8">
+                    <h2 class="text-brand-500 font-bold tracking-wide uppercase text-sm">为什么选择 Xinjun Market</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold leading-tight">专业的团队，透明的流程<br>为您保驾护航</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-brand-400 border border-slate-700">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">100% 账户资产安全</h4>
+                                <p class="text-slate-400">严格的风控体系，确保广告账户资产安全，规避违规风险，让投放更安心。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-brand-400 border border-slate-700">
+                                <i class="fas fa-search-dollar"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">全透明消费报告</h4>
+                                <p class="text-slate-400">拒绝黑箱操作，提供实时后台权限或详细日报/周报，每一分花费清晰可见。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-brand-400 border border-slate-700">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">丰富的出海经验</h4>
+                                <p class="text-slate-400">深耕电商、游戏、APP工具等多个领域，熟悉欧美、东南亚、中东等市场特性。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Stats Section -->
+    <section id="data" class="py-20 bg-brand-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white divide-x divide-white/20">
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">500+</div>
+                    <div class="text-brand-100">服务品牌企业</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">$50M+</div>
+                    <div class="text-brand-100">年度管理预算</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">300%</div>
+                    <div class="text-brand-100">平均 ROI 提升</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">24/7</div>
+                    <div class="text-brand-100">即时响应服务</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Contact Info -->
+                <div class="bg-brand-900 p-10 md:w-2/5 text-white flex flex-col justify-between relative overflow-hidden">
+                    <!-- Decor -->
+                    <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-white/10"></div>
+                    <div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-32 h-32 rounded-full bg-white/10"></div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">联系我们</h3>
+                        <p class="text-brand-100 mb-8">准备好开启业务增长了吗？请填写表格，我们的商务专家将在24小时内与您联系。</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-envelope w-6 text-center"></i>
+                                <span class="text-sm">contact@xinjunmarket.com</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-phone w-6 text-center"></i>
+                                <span class="text-sm">+86 1XX XXXX XXXX</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-map-marker-alt w-6 text-center"></i>
+                                <span class="text-sm">中国 · 深圳 / 香港</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="p-10 md:w-3/5 bg-white">
+                    <form onsubmit="event.preventDefault(); alert('感谢您的提交！我们的商务团队将尽快联系您。');" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">公司名称</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-200 transition outline-none" placeholder="请输入公司名称" required>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">联系人</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-200 transition outline-none" placeholder="称呼" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">联系方式 (微信/手机)</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-200 transition outline-none" placeholder="联系方式" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">预计月消耗预算 (USD)</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-200 transition outline-none">
+                                <option>< $5,000</option>
+                                <option>$5,000 - $20,000</option>
+                                <option>$20,000 - $100,000</option>
+                                <option>> $100,000</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">咨询内容</label>
+                            <textarea rows="3" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-200 transition outline-none" placeholder="请简述您的推广需求..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                            提交咨询
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="font-bold text-2xl text-white tracking-tight">Xinjun Market</span>
+                    <p class="text-sm mt-2">专注出海营销，连接全球商业价值。</p>
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-white transition">关于我们</a>
+                    <a href="#" class="hover:text-white transition">服务条款</a>
+                    <a href="#" class="hover:text-white transition">隐私政策</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-xs text-slate-600">
+                &copy; 2024 Xinjun Market Limited. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Transition on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Simple Intersection Observer for Fade-in effects
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach((section) => {
+            section.classList.add('opacity-0'); // Initial state
+            section.style.transition = 'opacity 0.5s';
+            observer.observe(section);
+        });
+        
+        // CSS class injection for JS animations
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .fade-in-up {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
